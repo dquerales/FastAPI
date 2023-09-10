@@ -5,15 +5,17 @@
 ## Installation
 
 1. Install fastapi and uvicorn packages
+   
    ```sh
 pip install fastapi uvicorn
    ```
 2. Run FastApi local host
+
    ```sh
 python -m uvicorn main:app --reload
    ```
-3. Make request in Postman
 
+3. Make request in Postman
 
 ## Usage
 
