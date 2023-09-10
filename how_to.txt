@@ -1,2 +1,0 @@
-1. pip install fastapi uvicorn
-2. python -m uvicorn main:app --reload

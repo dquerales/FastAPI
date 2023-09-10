@@ -1,4 +1,3 @@
-# Bring in lightweight dependencies
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
@@ -7,12 +6,12 @@ import pandas as pd
 app = FastAPI()
 
 class ScoringItem(BaseModel): 
-    YearsAtCompany: float #/ 1, // Float value 
-    EmployeeSatisfaction: float #0.01, // Float value 
-    Position:str # "Non-Manager", # Manager or Non-Manager
-    Salary: int #4.0 // Ordinal 1,2,3,4,5
+    YearsAtCompany: float 
+    EmployeeSatisfaction: float 
+    Position:str
+    Salary: int
 
-with open('rfmodel.pkl', 'rb') as f: 
+with open('model/model.pkl', 'rb') as f: 
     model = pickle.load(f)
 
 @app.post('/')
