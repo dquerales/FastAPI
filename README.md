@@ -3,24 +3,30 @@
 *This is an example to deploy a model using FastApi*
 
 ## Installation
-1. Install fastapi and uvicorn packages
+1. Install requirments
 ```
-pip install fastapi uvicorn
+pip install -r "requirements.txt"
 ```
 2. Run FastApi local host
 ```
-python -m uvicorn main:app --reload
+python -m uvicorn api:app --reload
 ```
 
 ## Usage
 
-1. Make request in Postman
+Request
 ```  
 {
     "YearsAtCompany":1, 
     "EmployeeSatisfaction":0.01,
     "Position":"Non-Manager",
     "Salary":1000
+}
+```
+Prediction
+```  
+{
+    "prediction":1, 
 }
 ```
 
