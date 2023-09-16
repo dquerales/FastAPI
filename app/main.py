@@ -16,7 +16,6 @@ async def startup_event():
     create_tables()
 
 
-# Dependency
 def get_db():
     db = SessionLocal()
     try:
