@@ -6,10 +6,10 @@ import pandas as pd
 app = FastAPI()
 
 class ScoringItem(BaseModel): 
-    YearsAtCompany: float 
-    EmployeeSatisfaction: float 
-    Position:str
-    Salary: int
+    sepal_length: float 
+    sepal_width: float
+    petal_length: float 
+    petal_width: float
 
 with open('model/model.pkl', 'rb') as f: 
     model = pickle.load(f)
@@ -18,4 +18,4 @@ with open('model/model.pkl', 'rb') as f:
 async def scoring_endpoint(item:ScoringItem): 
     df = pd.DataFrame([item.dict().values()], columns=item.dict().keys())
     yhat = model.predict(df)
-    return {"prediction":int(yhat)}
+    return {"prediction":str(yhat)}

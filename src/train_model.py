@@ -1,17 +1,23 @@
-# This is for training a model
+import numpy as np
+import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+import pickle
 
-X, y = load_dataset()
+df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X = df.drop(['species'], axis=1)
+y = df['species']
 
-model = DecisionTreeClassifier()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
+model = LogisticRegression()
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Model Accuracy: {accuracy}")
+print('Logistic Regression \n')
+print('accuracy: ', accuracy_score(y_test, y_pred))
+
+pickle.dump(model, open('../model/model.pkl', 'wb'))
