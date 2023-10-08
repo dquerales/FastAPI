@@ -11,9 +11,13 @@ jobs:
         id: action_black
         with:
           black_args: "."
-      - name: Commit files
+      - name: Commit lint changes
         if: steps.action_black.outputs.is_formatted == 'true'
-        uses: actions-js/push@master
+        uses: devops-infra/action-commit-push@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: ":art: Format Python code with psf/black"
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          add_timestamp: true
+          commit_prefix: "[AUTO]"
+          commit_message: ":art: Format Python code with psf/black"
+          force: false
+          target_branch: update/version
