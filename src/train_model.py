@@ -1,15 +1,14 @@
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score
 import pickle
 import config
 
-df = pd.read_csv(config.source)
+df = pd.read_csv(config.SOURCE)
 
-X = df.drop([config.target], axis=1)
-y = df[config.target]
+X = df.drop([config.TARGET], axis=1)
+y = df[config.TARGET]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
