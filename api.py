@@ -1,6 +1,6 @@
+import pickle
 from fastapi import FastAPI
 from pydantic import BaseModel
-import pickle
 import pandas as pd
 
 app = FastAPI()
