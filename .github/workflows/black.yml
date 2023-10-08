@@ -16,8 +16,8 @@ jobs:
         uses: devops-infra/action-commit-push@master
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
-          add_timestamp: true
+          #add_timestamp: true
           commit_prefix: "[AUTO]"
           commit_message: ":art: Format Python code with psf/black"
-          force: false
+          #force: false
           #target_branch: update/version
