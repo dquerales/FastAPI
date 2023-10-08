@@ -20,4 +20,4 @@ jobs:
           commit_prefix: "[AUTO]"
           commit_message: ":art: Format Python code with psf/black"
           force: false
-          target_branch: update/version
+          #target_branch: update/version
