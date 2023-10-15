@@ -8,6 +8,13 @@
 ```
 pip install -r "requirements.txt"
 ```
+2. Run train model
+```
+cd 'path'
+```
+```
+python src/train_model.py
+```
 
 ## Usage
 

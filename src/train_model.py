@@ -22,4 +22,4 @@ y_pred = model.predict(X_test)
 print("Logistic Regression \n")
 print("accuracy: ", accuracy_score(y_test, y_pred))
 
-pickle.dump(model, open("../model/model.pkl", "wb"))
+pickle.dump(model, open("model/model.pkl", "wb"))

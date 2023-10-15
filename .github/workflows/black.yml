@@ -1,5 +1,7 @@
 name: black-action
+
 on: push
+
 jobs:
   linter_name:
     name: runner / black
@@ -16,8 +18,5 @@ jobs:
         uses: devops-infra/action-commit-push@master
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
-          # add_timestamp: true
           commit_prefix: "[AUTO]"
           commit_message: ":art: Format Python code with psf/black"
-          # force: false
-          # target_branch: update/version # to create a new branch
