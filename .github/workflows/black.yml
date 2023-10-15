@@ -1,6 +1,10 @@
 name: black-lint
 
-on: push
+on:
+  workflow_run:
+    workflows: ["run train_model.py"]
+    types:
+      - completed
 
 jobs:
   linter_name:
