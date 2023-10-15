@@ -3,30 +3,41 @@
 *This is an example to deploy a model using FastApi*
 
 ## Installation
-1. Install requirments
+
+1. Install requirements
 ```
 pip install -r "requirements.txt"
 ```
-2. Run FastApi local host
+2. Run train model
 ```
-python -m uvicorn api:app --reload
+cd 'path'
+```
+```
+python src/train_model.py
 ```
 
 ## Usage
 
-Request
+1. Run FastApi local host
+```
+python -m uvicorn api:app --reload
+```
+2. Open POSTMAN and test this request:
+
 ```  
 {
-    "YearsAtCompany":1, 
-    "EmployeeSatisfaction":0.01,
-    "Position":"Non-Manager",
-    "Salary":1000
+    "sepal_length":6.5,
+    "sepal_width":3.0,
+    "petal_length":5.5,
+    "petal_width":1.8
 }
 ```
-Prediction
+
+3. The output should be the following prediction:
+
 ```  
 {
-    "prediction":1, 
+    "prediction": "['virginica']"
 }
 ```
 
