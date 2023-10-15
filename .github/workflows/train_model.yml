@@ -1,10 +1,6 @@
 name: run train_model.py
 
-on:   
-  workflow_run:
-    workflows: ["black-lint"]
-    types:
-      - completed
+on: push
 
 jobs:
   build:
