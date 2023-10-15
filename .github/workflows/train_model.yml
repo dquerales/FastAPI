@@ -1,8 +1,8 @@
-name: run main.py
+name: run train_model.py
 
 on:   
   workflow_run:
-    workflows: ["CI build"]
+    workflows: ["black-lint"]
     types:
       - completed
 
